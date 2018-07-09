@@ -13,6 +13,7 @@
 		09DA578220F3708B00C9781D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DA578020F3708B00C9781D /* Main.storyboard */; };
 		09DA578420F3708E00C9781D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DA578320F3708E00C9781D /* Assets.xcassets */; };
 		09DA578720F3708E00C9781D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DA578520F3708E00C9781D /* LaunchScreen.storyboard */; };
+		BBA2E11DA04D16AC9BD02ED3 /* Pods_Heady.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4648F8EF88E3DB0D7BE84BEE /* Pods_Heady.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		09DA578320F3708E00C9781D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09DA578620F3708E00C9781D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09DA578820F3708E00C9781D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B6A43ECD88D2D1EF3FF4460 /* Pods-Heady.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heady.release.xcconfig"; path = "Pods/Target Support Files/Pods-Heady/Pods-Heady.release.xcconfig"; sourceTree = "<group>"; };
+		45043ED055110154B052A05E /* Pods-Heady.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heady.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Heady/Pods-Heady.debug.xcconfig"; sourceTree = "<group>"; };
+		4648F8EF88E3DB0D7BE84BEE /* Pods_Heady.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heady.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA2E11DA04D16AC9BD02ED3 /* Pods_Heady.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				09DA577920F3708B00C9781D /* Heady */,
 				09DA577820F3708B00C9781D /* Products */,
+				E0C870C0144876108F3D15AD /* Pods */,
+				667ACD896451F5B2F804DA25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = Heady;
 			sourceTree = "<group>";
 		};
+		667ACD896451F5B2F804DA25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4648F8EF88E3DB0D7BE84BEE /* Pods_Heady.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0C870C0144876108F3D15AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45043ED055110154B052A05E /* Pods-Heady.debug.xcconfig */,
+				3B6A43ECD88D2D1EF3FF4460 /* Pods-Heady.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09DA578B20F3708E00C9781D /* Build configuration list for PBXNativeTarget "Heady" */;
 			buildPhases = (
+				DBBC04E67C5D867BF56249B2 /* [CP] Check Pods Manifest.lock */,
 				09DA577320F3708B00C9781D /* Sources */,
 				09DA577420F3708B00C9781D /* Frameworks */,
 				09DA577520F3708B00C9781D /* Resources */,
+				F72BCD24CCE6BB622C7C9EFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DBBC04E67C5D867BF56249B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Heady-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F72BCD24CCE6BB622C7C9EFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Heady/Pods-Heady-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Heady/Pods-Heady-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09DA577320F3708B00C9781D /* Sources */ = {
@@ -282,6 +347,7 @@
 		};
 		09DA578C20F3708E00C9781D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45043ED055110154B052A05E /* Pods-Heady.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +366,7 @@
 		};
 		09DA578D20F3708E00C9781D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B6A43ECD88D2D1EF3FF4460 /* Pods-Heady.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
